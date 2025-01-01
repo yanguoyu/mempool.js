@@ -21,7 +21,7 @@ export const useBlocks = (api: AxiosInstance): BlockInstance => {
     hash: string;
     start_index?: number;
   }) => {
-    const { data } = await api.get<Tx>(
+    const { data } = await api.get<Tx[]>(
       `/block/${params.hash}/txs/${params.start_index}`
     );
     return data;
